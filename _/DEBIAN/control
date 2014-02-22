@@ -1,0 +1,10 @@
+Package: com.drewsdunne.discreet
+Name: Discreet
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: drewsdunne
+Author: drewsdunne
+Section: Tweaks
+Version: 0.0.1-15
+Installed-Size: 56
