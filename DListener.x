@@ -11,6 +11,7 @@
 
     if ([ncc.viewController notificationsPending])
     {
+        NSLog(@"[Discreet] Detected pending notifications, sending vibration signal.");
     	AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }

@@ -4,6 +4,9 @@
 
 @interface SBNotificationCenterViewController : UIViewController
 - (id)_allModeViewControllerCreateIfNecessary:(_Bool)arg1;
+@end
+
+@interface SBNotificationCenterViewController (Discreet)
 - (BOOL)notificationsPending;
 @end
 

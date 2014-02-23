@@ -2,9 +2,9 @@ Package: com.drewsdunne.discreet
 Name: Discreet
 Depends: mobilesubstrate
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
+Description: Discreetly check notifications.
+ Activator Listener that activates if there are pending notifications. Configure all settings via Activator.
 Maintainer: drewsdunne
 Author: drewsdunne
 Section: Tweaks
-Version: 0.0.1-5
-Installed-Size: 52
+Version: 0.2
