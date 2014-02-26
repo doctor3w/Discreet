@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = DiscreetPrefs;
+	cell = PSLinkCell;
+	detail = DiscreetPrefsListController;
+	icon = DiscreetPrefs.png;
+	isController = 1;
+	label = Discreet;
+    };
+}

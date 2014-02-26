@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Discreet</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.drewsdunne.discreet</string>
+			<key>key</key>
+			<string>onlyLS</string>
+			<key>label</key>
+			<string>Lockscreen Only</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSStaticTextCell</string>
+			<key>label</key>
+			<string>Turn on if you want it to vibrate only for notifications on the lockscreen, not just notification center in general.</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>Discreet</string>
+</dict>
+</plist>

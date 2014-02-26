@@ -1,7 +1,7 @@
 Package: com.drewsdunne.discreet
 Name: Discreet
-Depends: mobilesubstrate, libactivator
-Version: 0.0.1
+Depends: mobilesubstrate, libactivator, firmware (>= 7.0)
+Version: 1.0.2
 Architecture: iphoneos-arm
 Description: Check your phone for pending notifications without looking at it
 Maintainer: drewsdunne
