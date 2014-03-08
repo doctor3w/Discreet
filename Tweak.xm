@@ -4,17 +4,9 @@
 #define PREFS_PATH           [NSString stringWithFormat:@"%@/Library/Preferences/com.drewsdunne.discreet.plist", NSHomeDirectory()]
 #define kSettingsChanged         @"com.drewsdunne.discreet/settingsChanged"
 
-BOOL lsOnly;
+static BOOL _lsOnly;
 
-static inline void setSettingsNotification(CFNotificationCenterRef center,
-									void *observer,
-									CFStringRef name,
-									const void *object,
-									CFDictionaryRef userInfo) {
-	NSString *val = (NSString *)[[NSDictionary dictionaryWithContentsOfFile:PREFS_PATH] objectForKey:@"onlyLS"];
-	lsOnly = val.boolValue;
-}
-
+//Headers
 @interface SBBulletinObserverViewController : UIViewController 
 - (id)firstSection;
 @end
@@ -39,6 +31,18 @@ static inline void setSettingsNotification(CFNotificationCenterRef center,
 @property(readonly, nonatomic) SBLockScreenViewControllerBase *lockScreenViewController;
 @end
 
+void load_settings()
+{
+	BOOL lsOnly = [(NSString *)[[NSDictionary dictionaryWithContentsOfFile:PREFS_PATH] objectForKey:@"onlyLS"] boolValue];
+	_lsOnly = lsOnly;
+}
+
+static inline void setSettingsNotification(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo)
+{
+	load_settings();
+}
+
+//Activator Listener
 @interface Discreet : NSObject <LAListener>
 
 @end
@@ -46,9 +50,7 @@ static inline void setSettingsNotification(CFNotificationCenterRef center,
 @implementation Discreet 
 
 - (void)activator:(LAActivator *)activator receiveEvent:(LAEvent *)event {
-	//NSString *val = (NSString *)[[NSDictionary dictionaryWithContentsOfFile:PREFS_PATH] objectForKey:@"onlyLS"];
-	//BOOL lsOnly = val.boolValue;
-	if (lsOnly)
+	if (_lsOnly)
 	{
 		SBLockScreenManager *lsm = (SBLockScreenManager *)[%c(SBLockScreenManager) sharedInstance];
 		if ([lsm.lockScreenViewController lockScreenIsShowingBulletins])
@@ -91,8 +93,8 @@ static inline void setSettingsNotification(CFNotificationCenterRef center,
 %end
 
 %ctor {
-	NSString *val = (NSString *)[[NSDictionary dictionaryWithContentsOfFile:PREFS_PATH] objectForKey:@"onlyLS"];
-	lsOnly = val.boolValue;
+	load_settings();
+
 	CFNotificationCenterRef r = CFNotificationCenterGetDarwinNotifyCenter();
     CFNotificationCenterAddObserver(r, NULL, &setSettingsNotification, (CFStringRef)kSettingsChanged, NULL, 0);
 }

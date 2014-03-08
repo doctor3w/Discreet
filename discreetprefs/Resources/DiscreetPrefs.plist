@@ -7,10 +7,14 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Turn on if you want it to vibrate only for notifications on the lockscreen, not just notification center in general.</string>
 			<key>label</key>
-			<string>Discreet</string>
+			<string>Notification Types</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.drewsdunne.discreet/settingsChanged</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -24,9 +28,43 @@
 		</dict>
 		<dict>
 			<key>cell</key>
-			<string>PSStaticTextCell</string>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string></string>
 			<key>label</key>
-			<string>Turn on if you want it to vibrate only for notifications on the lockscreen, not just notification center in general.</string>
+			<string>Contact</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Follow on Twitter</string>
+			<key>action</key>
+			<string>follow:</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Support/Feedback</string>
+			<key>action</key>
+			<string>emailSupport:</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Go to Website</string>
+			<key>action</key>
+			<string>visitWebsite:</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Donate via PayPal</string>
+			<key>action</key>
+			<string>donate:</string>
 		</dict>
 	</array>
 	<key>title</key>
