@@ -6,4 +6,4 @@ _
 obj
 *.deb
 images
-
+.gitignore
